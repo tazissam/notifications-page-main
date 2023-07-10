@@ -35,7 +35,8 @@
                         <div class="notif__item__content__text">
                             <span class="notif__item__content__text__name notif__item--hover">Mark Webber</span>
                             <span class="notif__item__content__text__action">reacted to your recent post</span>
-                            <span class="notif__item__content__text__post notif__item--hover">My first tournament today!</span>
+                            <span class="notif__item__content__text__post notif__item--hover">My first tournament
+                                today!</span>
                             <span class="notif__item__content__text__dot"></span>
                         </div>
                         <span class="notif__item__content__time">1m ago</span>
@@ -101,7 +102,7 @@
                             <div class="notif__item__content__text">
                                 <span class="notif__item__content__text__name notif__item--hover">Kimberly Smith</span>
                                 <span class="notif__item__content__text__action">commented on your picture</span>
-                            <span class="notif__item__content__text__dot"></span>
+                                <span class="notif__item__content__text__dot"></span>
 
                             </div>
                             <span class="notif__item__content__time">1 week ago</span>
@@ -120,7 +121,8 @@
                         <div class="notif__item__content__text">
                             <span class="notif__item__content__text__name notif__item--hover">Nathan Peterson</span>
                             <span class="notif__item__content__text__action">reacted to your recent post</span>
-                            <span class="notif__item__content__text__post notif__item--hover">5 end-game strategies to increase your win rate</span>
+                            <span class="notif__item__content__text__post notif__item--hover">5 end-game strategies to
+                                increase your win rate</span>
                             <span class="notif__item__content__text__dot"></span>
 
                         </div>
@@ -162,17 +164,17 @@
             update_notif()
         })
 
-        const update_notif = ()  => {
+        const update_notif = () => {
             let notifc = 0
-            document.querySelectorAll('.notif__item--unread').forEach( (i,v) => {
+            document.querySelectorAll('.notif__item--unread').forEach((i, v) => {
                 notifc++
             })
             if (notifc > 0) {
                 countnotifs.innerHTML = notifc;
             }
-            else{
-            document.querySelector('.notif__header__side__badge').style.display = 'none';
-                
+            else {
+                document.querySelector('.notif__header__side__badge').style.display = 'none';
+
             }
         }
         update_notif()
