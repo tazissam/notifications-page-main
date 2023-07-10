@@ -147,17 +147,35 @@
         </section>
     </div>
     <script>
+        const notifs = document.querySelectorAll('.notif__item');
         const notifItems = document.querySelectorAll('.notif__item--unread');
-
+        const countnotifs = document.querySelector('.notif__header__side__badge');
         notifItems.forEach(item => item.addEventListener('click', () => {
             item.classList.remove('notif__item--unread');
+            update_notif()
         }))
 
         const notifHeader = document.querySelector('.notif__header__link');
 
         notifHeader.addEventListener('click', () => {
             notifItems.forEach(item => item.classList.remove('notif__item--unread'))
+            update_notif()
         })
+
+        const update_notif = ()  => {
+            let notifc = 0
+            document.querySelectorAll('.notif__item--unread').forEach( (i,v) => {
+                notifc++
+            })
+            if (notifc > 0) {
+                countnotifs.innerHTML = notifc;
+            }
+            else{
+            document.querySelector('.notif__header__side__badge').style.display = 'none';
+                
+            }
+        }
+        update_notif()
 
     </script>
 </body>
