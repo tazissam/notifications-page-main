@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("assets/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "PlusJakartaSans-Medium";
+  src: url("assets/fonts/static/PlusJakartaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "PlusJakartaSans-extraBold";
+  src: url("assets/fonts/static/PlusJakartaSans-ExtraBold.ttf") format("truetype");
+  font-weight: bolder;
+}
+:root {
+  --primary-red: hsl(1, 90%, 64%);
+  --primary-blue: hsl(219, 85%, 26%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-very-light-grayish-blue: hsl(210, 60%, 98%);
+  --neutral-light-grayish-blue-1: hsl(211, 68%, 94%);
+  --neutral-light-grayish-blue-2: hsl(205, 33%, 90%);
+  --neutral-grayish-blue: hsl(219, 14%, 63%);
+  --neutral-dark-grayish-blue: hsl(219, 12%, 42%);
+  --neutral-very-dark-blue: hsl(224, 21%, 14%);
+  --fs-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-family: "PlusJakartaSans", sans-serif;
+  font-weight: normal;
+  font-size: var(--fs-size);
+  line-height: 1.5;
+  background: var(--neutral-very-light-grayish-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.notif {
+  background: var(--neutral-white);
+  max-width: 730px;
+  border-radius: 0.9rem;
+  margin-block: 4rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.notif__header {
+  margin-block: 1.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.notif__header__side {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.notif__header__side__title {
+  font-family: "PlusJakartaSans-extraBold", sans-serif;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: var(--neutral-very-dark-blue);
+}
+.notif__header__side__badge {
+  background: var(--primary-blue);
+  color: var(--neutral-white);
+  border-radius: 0.5rem;
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.notif__header__link {
+  color: var(--neutral-dark-grayish-blue);
+  font-size: 1rem;
+  text-decoration: none;
+}
+.notif__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.notif__item {
+  border-radius: 0.5rem;
+  padding: 1.125rem;
+  display: flex;
+  gap: 1.2rem;
+}
+.notif__item--unread {
+  background: var(--neutral-very-light-grayish-blue);
+}
+.notif__item--unread .notif__item__content__text__dot {
+  display: inline-block;
+}
+.notif__item--hover:hover {
+  cursor: pointer;
+  color: var(--primary-blue);
+}
+.notif__item--hover:hover:is(.notif__item__content__message) {
+  color: var(--neutral-dark-grayish-blue);
+  background: var(--neutral-light-grayish-blue-1);
+}
+.notif__item__avatar {
+  flex-shrink: 0;
+}
+.notif__item__avatar img {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+.notif__item__content {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--neutral-dark-grayish-blue);
+}
+.notif__item__content__text__name {
+  font-family: "PlusJakartaSans-extraBold", sans-serif;
+  font-size: 1rem;
+  color: var(--neutral-very-dark-blue);
+}
+.notif__item__content__text__post {
+  font-family: "PlusJakartaSans-Medium";
+  font-weight: 700;
+}
+.notif__item__content__text__group {
+  font-family: "PlusJakartaSans-Medium";
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--primary-blue);
+}
+.notif__item__content__text__dot {
+  display: none;
+  width: 8px;
+  height: 8px;
+  margin-left: 0.2rem;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+}
+.notif__item__content__message {
+  padding: 1.125rem;
+  margin-block: 0.75rem;
+  border: 1px solid var(--neutral-light-grayish-blue-2);
+}
+.notif__item__content__time {
+  font-weight: 300;
+  color: var(--neutral-grayish-blue);
+}
+.notif__item__father {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.notif__item__picture {
+  width: 2.875rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 260px) {
+  body {
+    background: #000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .notif {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 1rem;
+  }
+}
